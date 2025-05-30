@@ -3,22 +3,18 @@
     "name": "auto_farma",
     "slug": "auto_farma",
     "version": "1.0.0",
-
+    "scheme": "autofarma",
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
     },
-
     "experiments": {
       "tsconfigPaths": true
     },
-
-    "plugins": [],
-
+    "plugins": ["expo-router", "expo-font"],
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-
     "userInterfaceStyle": "light",
-
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -26,13 +22,45 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "Este app precisa acessar a câmera.",
+        "NSLocationWhenInUseUsageDescription": "Este app precisa acessar sua localização.",
+        "NSPhotoLibraryUsageDescription": "Este app precisa acessar sua galeria de fotos.",
+        "NSMicrophoneUsageDescription": "Este app precisa acessar o microfone.",
+        "NSDocumentsFolderUsageDescription": "Este app precisa acessar os documentos."
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
+      },
+      "package": "auto.farma",
+      "permissions": [
+        "CAMERA",
+        "RECORD_AUDIO",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "FOREGROUND_SERVICE",
+        "INTERNET",
+        "VIBRATE",
+        "WAKE_LOCK"
+      ]
+    },
+    "extra": {
+      "eas": {
+        "projectId": "c84fc19a-489c-4327-839e-c98c8bee505b"
       }
+    },
+    "owner": "obede_dintala",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/c84fc19a-489c-4327-839e-c98c8bee505b"
     }
   }
 }
